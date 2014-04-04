@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Услышь своё настроение</title>
+    {% block stylesheets -%}
+        {#{% stylesheets 'bundles/luzmancore/css/*' filter='cssrewrite' %}#}
+        {% stylesheets '../src/LMD/CoreBundle/Resources/public/css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+</head>
+<body>
+<header class="panels">{% include 'LMDCoreBundle:Default:header.html.twig' %}</header>
+<main class="wrapper">
+    <section id="block-search">
+        <h1>Найди звуки своего настроения</h1>
+        <form id="search-bar" action="."><input name="q" type="text"/><input type="submit" value="&#9773;"/></form>
+    </section>
+    <section id="block-player">Player Block</section>
+    <section id="block-info">Info Block</section>
+    <section id="block-suggestion">Suggestion Block</section>
+</main>
+<footer id="footer">Здесь информация о авторах, контакты и посыл найух копирастов</footer>
+</body>
+</html>
